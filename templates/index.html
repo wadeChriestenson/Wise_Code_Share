@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WISE Code Share</title>
+    <link href="{% static 'css/index111111.css' %}" rel="stylesheet">
+</head>
+<body class="body">
+    <header class="header">
+        <h1 class="title">WISE Code Share</h1>
+    </header>
+    <div class="mainWrap">
+
+   {% for i in posts %}
+           <div class="postWrap">
+    <h2 class="subTitle">{{ i.post_title}}</h2>
+    <h6 class="author">
+    Author:&nbsp
+      {{i.post_author}}
+    </h6>
+    <p class="desc">Description:&nbsp{{ i.post_description }}</p>
+    <code class="code">
+      {{ i.post_description_markdown }}
+    </code>
+    <p class="created">Create:&nbsp{{ i.created}}</p>
+    <p class="updated">Las Modified:&nbsp{{ i.updated}}</p>
+           </div>
+    {% endfor %}
+
+    </div>
+</body>
+</html>
